@@ -49,6 +49,9 @@ describe('Requisito 05', () => {
       'Electric', 'Fire', 'Bug', 'Poison', 'Psychic', 'Normal', 'Dragon',
     ];
 
+    const allTypeButtons = screen.getAllByTestId('pokemon-type-button');
+    expect(allTypeButtons).toHaveLength(pokemonTypes.length);
+
     pokemonTypes.forEach((type) => {
       const button = screen.getByRole('button', { name: type });
       expect(button).toBeInTheDocument();
