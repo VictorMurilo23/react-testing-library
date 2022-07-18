@@ -9,7 +9,8 @@ describe('Requisito 04', () => {
       const { history } = renderWithRouter(<App />);
       history.push('/nao-existe');
 
-      const h2NotFound = screen.getByText(/page requested not found/i);
+      const h2NotFound = screen.getByRole('heading',
+        { name: /page requested not found/i, level: 2 });
       expect(h2NotFound).toBeDefined();
     });
 
